@@ -22,14 +22,14 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
 
 ### Part I — Foundations
 
-- **[00 — Setup and Tooling](00-setup-and-tooling.md)**
+- **[00 — Setup and Tooling](docs/00-setup-and-tooling.md)**
   - Installing the JDK, Scala, sbt, and Scala-CLI
   - The REPL and worksheets
   - IDE choices: IntelliJ vs Metals (VS Code)
   - Hello World, three ways
   - The shape of a real project (`build.sbt`, `project/`, `src/main/scala`, `src/test/scala`)
 
-- **[01 — Language Basics](01-language-basics.md)**
+- **[01 — Language Basics](docs/01-language-basics.md)**
   - `val` and `var`, type inference, the `Unit` type
   - Primitive types and the `AnyVal` / `AnyRef` hierarchy
   - Literals: integers, floats, characters, strings, symbols, tuples
@@ -39,7 +39,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - Operators are method calls (`1 + 2` is `1.+(2)`)
   - Comments and ScalaDoc
 
-- **[02 — Functions and Methods](02-functions-and-methods.md)**
+- **[02 — Functions and Methods](docs/02-functions-and-methods.md)**
   - `def` (methods) vs `val` (function values)
   - Parameter lists, default arguments, named arguments
   - Currying and multiple parameter lists
@@ -50,7 +50,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - Polymorphic methods (type parameters)
   - `Nothing`, `Any`, `Unit`, `Null` as return types
 
-- **[03 — Strings and String Interpolation](03-strings-and-interpolation.md)**
+- **[03 — Strings and String Interpolation](docs/03-strings-and-interpolation.md)**
   - String literals, multi-line strings, raw strings
   - `s""`, `f""`, `raw""`, `xml""` interpolators
   - Building custom interpolators (the `StringContext` trick)
@@ -59,7 +59,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
 
 ### Part II — Data and Control
 
-- **[04 — Collections](04-collections.md)**
+- **[04 — Collections](docs/04-collections.md)**
   - The collection hierarchy (`Iterable`, `Seq`, `Set`, `Map`)
   - Immutable vs mutable; the rule of thumb
   - `List`, `Vector`, `LazyList`, `Array`, `Range`
@@ -71,7 +71,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - `Tuple` (`(a, b)`) and named-tuple alternatives
   - Mutable counterparts: when (rarely) to use them
 
-- **[05 — Pattern Matching](05-pattern-matching.md)**
+- **[05 — Pattern Matching](docs/05-pattern-matching.md)**
   - `match` expressions
   - Type, literal, constructor, and tuple patterns
   - Sequence patterns (`List(a, _, c)`, `_*`)
@@ -84,7 +84,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
 
 ### Part III — OOP in Scala
 
-- **[06 — Classes and Objects](06-classes-and-objects.md)**
+- **[06 — Classes and Objects](docs/06-classes-and-objects.md)**
   - `class`, primary constructor, secondary constructors
   - Auxiliary constructors with `this(...)`
   - Fields: `val`, `var`, private/protected
@@ -95,7 +95,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - `case object`
   - Visibility modifiers: `private`, `protected`, `private[pkg]`
 
-- **[07 — Traits and Inheritance](07-traits-and-inheritance.md)**
+- **[07 — Traits and Inheritance](docs/07-traits-and-inheritance.md)**
   - `trait`: abstract members, concrete members, mixin composition
   - Linearization and the diamond problem
   - `super` in traits (stackable modifications)
@@ -106,7 +106,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
 
 ### Part IV — Type System
 
-- **[08 — Type System Fundamentals](08-type-system.md)**
+- **[08 — Type System Fundamentals](docs/08-type-system.md)**
   - The full type hierarchy (`Any`, `AnyVal`, `AnyRef`, `Nothing`, `Null`, `Unit`)
   - Type aliases (`type X = Y`)
   - Variance: covariance (`+T`), contravariance (`-T`), invariance
@@ -115,7 +115,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - Type ascription vs casting (`asInstanceOf`)
   - **Scala 3 note**: `opaque type`, union types `A | B`, intersection types `A & B`, match types
 
-- **[09 — Generics and Advanced Types](09-advanced-types.md)**
+- **[09 — Generics and Advanced Types](docs/09-advanced-types.md)**
   - Generic classes, methods, and traits
   - F-bounded polymorphism (`A <: Comparable[A]`)
   - Higher-kinded types (`F[_]`, `M[_, _]`)
@@ -127,7 +127,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
 
 ### Part V — Implicits and Contextual Abstractions
 
-- **[10 — Implicits (Scala 2)](10-implicits-scala2.md)**
+- **[10 — Implicits (Scala 2)](docs/10-implicits-scala2.md)**
   - `implicit val`, `implicit def`, `implicit class`, `implicit object`
   - Implicit parameters and resolution rules
   - The implicit scope and where Scala looks
@@ -137,7 +137,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - The type class encoding with implicits
   - Common pitfalls and how to debug implicit resolution (`-Xlog-implicits`)
 
-- **[11 — Given/Using (Scala 3)](11-given-using-scala3.md)**
+- **[11 — Given/Using (Scala 3)](docs/11-given-using-scala3.md)**
   - `given` and `using` — the new spelling
   - `extension` methods
   - `summon[T]` (the new `implicitly`)
@@ -148,7 +148,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
 
 ### Part VI — Functional Programming
 
-- **[12 — Functional Programming Foundations](12-functional-programming.md)**
+- **[12 — Functional Programming Foundations](docs/12-functional-programming.md)**
   - Pure functions and referential transparency
   - Immutability in practice
   - First-class functions (recap)
@@ -157,7 +157,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - Currying revisited
   - Algebraic Data Types in Scala (sealed traits + case classes; Scala 3 enums)
 
-- **[13 — Error Handling](13-error-handling.md)**
+- **[13 — Error Handling](docs/13-error-handling.md)**
   - `Option[A]` and the absence of `null`
   - `Either[L, R]` for biased error handling
   - `Try[A]` for exception capture
@@ -165,14 +165,14 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - When exceptions are still appropriate
   - Mapping between them (`Option.toRight`, `Try.toEither`)
 
-- **[14 — Lazy Evaluation](14-lazy-evaluation.md)**
+- **[14 — Lazy Evaluation](docs/14-lazy-evaluation.md)**
   - `lazy val` semantics (one-time, thread-safe init)
   - By-name parameters (`=> A`) and `Function0`
   - `LazyList` (formerly `Stream`) for infinite sequences
   - Memoization patterns
   - Performance and pitfalls (memory leaks via `LazyList`)
 
-- **[15 — For Comprehensions](15-for-comprehensions.md)**
+- **[15 — For Comprehensions](docs/15-for-comprehensions.md)**
   - Desugaring `for/yield` into `map`/`flatMap`/`withFilter`
   - Generators, guards, and value definitions
   - For comprehensions over `Option`, `Either`, `Future`, `Try`, `List`
@@ -180,14 +180,14 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
 
 ### Part VII — Type Classes and FP Abstractions
 
-- **[16 — The Type Class Pattern](16-typeclasses.md)**
+- **[16 — The Type Class Pattern](docs/16-typeclasses.md)**
   - The pattern: trait + implicit instances + summoner
   - Worked example: `Show[A]`, `Eq[A]`, `Ord[A]` from scratch
   - Conditional/derived instances
   - Type class derivation (`Shapeless` in Scala 2, `derives` in Scala 3)
   - Coherence and orphan instances
 
-- **[17 — Functors, Applicatives, Monads, and Friends](17-monads-and-fp-abstractions.md)**
+- **[17 — Functors, Applicatives, Monads, and Friends](docs/17-monads-and-fp-abstractions.md)**
   - `Functor`, `Applicative`, `Monad`, `Traverse`, `Foldable`
   - The laws each must obey
   - Worked examples with `List`, `Option`, `Either`, custom types
@@ -197,7 +197,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
 
 ### Part VIII — Concurrency and Effects
 
-- **[18 — Futures and Promises](18-concurrency-futures.md)**
+- **[18 — Futures and Promises](docs/18-concurrency-futures.md)**
   - `Future[A]` and the `ExecutionContext`
   - Combinators: `map`, `flatMap`, `recover`, `recoverWith`, `zip`
   - `Promise[A]` for bridging callback APIs
@@ -206,7 +206,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - Pitfalls: thread starvation, exception swallowing, fairness
   - **Scala 3 note**: `Future` API unchanged; new alternatives like `ox` exist
 
-- **[19 — Cats Effect and the IO Monad](19-cats-effect-and-io.md)**
+- **[19 — Cats Effect and the IO Monad](docs/19-cats-effect-and-io.md)**
   - The motivation: `Future` is eager; `IO` is referentially transparent
   - `IO[A]`: building, sequencing, running
   - Resource safety with `Resource[F, A]`
@@ -214,7 +214,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - Cancellation
   - Brief mention of **ZIO** as an alternative effect system
 
-- **[20 — Actors and Streams (intro)](20-actors-and-streams.md)**
+- **[20 — Actors and Streams (intro)](docs/20-actors-and-streams.md)**
   - Brief intro to the actor model (Akka / Pekko)
   - Akka Streams basics (`Source`, `Flow`, `Sink`, back-pressure)
   - When to reach for actors vs effects vs streams
@@ -222,14 +222,14 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
 
 ### Part IX — Metaprogramming and Tooling
 
-- **[21 — Macros and Metaprogramming](21-macros-and-metaprogramming.md)**
+- **[21 — Macros and Metaprogramming](dcos/21-macros-and-metaprogramming.md)**
   - `inline` (Scala 3) and the simpler metaprogramming model
   - Scala 2 def macros and why they're niche
   - Scala 3 quoted macros (`'{}` and `${}`)
   - Reflection (`scala.reflect`) — when (rarely) to use it
   - Practical examples: compile-time JSON codec generation
 
-- **[22 — Build with sbt](22-build-tools-sbt.md)**
+- **[22 — Build with sbt](docs/22-build-tools-sbt.md)**
   - `build.sbt` anatomy
   - Tasks vs settings
   - Multi-project builds
@@ -237,7 +237,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - Cross-compiling for Scala 2 and 3
   - Mill and scala-cli as alternatives
 
-- **[23 — Testing](23-testing.md)**
+- **[23 — Testing](docs/23-testing.md)**
   - **ScalaTest** styles (FunSuite, FlatSpec, WordSpec) and matchers
   - **MUnit** as the lighter modern alternative
   - **ScalaCheck** for property-based testing
@@ -245,7 +245,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - Testing async code (Futures, IO)
   - Testing actors (Akka TestKit)
 
-- **[24 — Java Interop](24-java-interop.md)**
+- **[24 — Java Interop](docs/24-java-interop.md)**
   - Calling Java from Scala — automatic
   - Calling Scala from Java — name mangling, traits, default args
   - Java collections in Scala (`scala.jdk.CollectionConverters`)
@@ -254,7 +254,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
 
 ### Part X — Putting it together
 
-- **[25 — Best Practices and Idioms](25-best-practices.md)**
+- **[25 — Best Practices and Idioms](docs/25-best-practices.md)**
   - Idiomatic Scala 2 vs idiomatic Scala 3
   - Naming conventions
   - When to use case classes, when sealed traits, when enums
@@ -263,7 +263,7 @@ A working setup: install JDK 17+, install [Coursier](https://get-coursier.io/) (
   - Effect systems: pick one and stick to it
   - Scalafmt + scalafix as guard rails
 
-- **[26 — Cheatsheet](26-cheatsheet.md)**
+- **[26 — Cheatsheet](docs/26-cheatsheet.md)**
   - Syntax-at-a-glance for every concept above
   - Scala 2 → Scala 3 migration table
   - Common idioms one-liners
@@ -318,6 +318,3 @@ All 27 chapters are complete (v1).
 
 This is a personal learning resource. PRs welcome for typos, factual errors, missing examples, or new edge cases.
 
-## License
-
-MIT.
