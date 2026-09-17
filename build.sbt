@@ -1,10 +1,12 @@
-ThisBuild / version := "0.1.0-SNAPSHOT"
+val scala3Version = "3.3.5"
 
-ThisBuild / scalaVersion := "2.13.18"
-
-lazy val root = (project in file("."))
+lazy val root = project
+  .in(file("."))
   .settings(
-    name := "ScalaFoundationScala2to3"
-  )
+    name := "scala-3-Test",
+    version := "0.1.0",
 
-libraryDependencies += "org.scalatest" %% "scalatest" % "3.2.18" % Test
+    scalaVersion := scala3Version,
+
+    libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test"
+  )
