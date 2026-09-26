@@ -1,4 +1,4 @@
-package org.scala.test1.part1
+package org.scala.test1.part1Basic
 
 object Expression {
 
@@ -20,7 +20,7 @@ object Expression {
 
   val nonEquality = !equalityTest
 
-  //So in programming world their are two types of things
+  //So in programming world there are two types of things
   // first instruction and expression, instruction generally used in python or javascript
   // where we provide instruction like below
   // age = 25

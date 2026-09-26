@@ -1,4 +1,4 @@
-package org.scala.test1.part1
+package org.scala.test1.part1Basic
 
 object ValuesAndTypes {
 
