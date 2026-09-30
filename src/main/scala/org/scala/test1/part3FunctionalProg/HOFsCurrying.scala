@@ -105,6 +105,10 @@ object HOFsCurrying {
    * */
   val supperAdder: Int => Int => Int => Int = (x: Int) => (y: Int) => (z: Int) => x + y + z
 
+  val superAdder_v1: Int => Int => Int = (x: Int) => (y: Int) => x + y
+
+  println(superAdder_v1(10)(20))
+
   //currying nothing as HOF aas this is returning function
 
   //eg curriedMethod
@@ -135,9 +139,30 @@ object HOFsCurrying {
    *  2. toCurry(f: (Int, Int) => Int): Int => Int => Int
    *     fromCurry(f: (Int => Int => Int)): (Int, Int) => Int
    *
-   *  3. compose(f,g) => x => f(g(x))
+   *  3. compose(f,g) => x => f(g(x)) this take two function and return another function
    *     andThen(f,g) => x => g(f(x))
    */
+
+
+  // (Int,Int) -> Int == Int -> (Int,Int)
+  //2.toCurry(f: (Int, Int) => Int): Int => Int => Int
+  val toCurry: ((Int, Int) => Int) => Int => Int => Int = f => x => y => f(x, y)
+
+
+  //3. fromCurry(f: (Int => Int => Int)): (Int, Int) => Int
+
+  val fromCurry: (Int => Int => Int) => (Int, Int) => Int = f => (x, y) => f(x)(y)
+
+  // 3. compose(f,g) => x => f(g(x)) this take two function and return another function
+  val compose: (Int => Int, Int => Int) => Int => Int = (f, g) => x => f(g(x))
+  //andThen(f,g) => x => g(f(x))
+
+  val andThen: (Int => Int, Int => Int) => Int => Int = (g, f) => x => g(f(x))
+
+  val incrementer = (x: Int) => x + 1
+  val doubler = (x: Int) => 2 * x
+  val composedApplication = compose(incrementer, doubler)
+  val aSequencedApplication = andThen(incrementer, doubler)
 
 
   def main(args: Array[String]): Unit = {
@@ -151,6 +176,13 @@ object HOFsCurrying {
     println(s"currying supperAdder ${supperAdder(10)(20)(30)}")
     println(standardFormater(Math.PI))
     println(preciseFormater(Math.PI))
+
+    println(s"${toCurry(_ + _)(10)(20)}")
+    val simpleAdder = fromCurry(superAdder_v1)
+    println(s"${simpleAdder(10,20)}")
+    println(composedApplication(14)) // 29 = 2 * 14 + 1
+    println(aSequencedApplication(14)) // 30 = (14 + 1) * 2
+
 
   }
 }
