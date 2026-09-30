@@ -1,4 +1,6 @@
-val scala3Version = "3.3.5"
+import sbt.Keys.libraryDependencies
+
+val scala3Version = "3.7.3"
 
 lazy val root = project
   .in(file("."))
@@ -7,6 +9,15 @@ lazy val root = project
     version := "0.1.0",
 
     scalaVersion := scala3Version,
+    scalacOptions ++= Seq(
+      "-deprecation",
+      "-feature",
+      "-unchecked"
+    ),
 
-    libraryDependencies += "com.novocode" % "junit-interface" % "0.11" % "test"
+    libraryDependencies ++= Seq(
+      "com.novocode" % "junit-interface" % "0.11" % "test",
+      "org.scala-lang.modules" %% "scala-parallel-collections" % "1.0.3"
+    )
   )
+

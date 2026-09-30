@@ -14,7 +14,7 @@ object Expression {
 
   // Comparsion expression <, <=, >, >=, ==,!=
 
-  val equalityTest = 1 == 2
+  private val equalityTest = 1 == 2
 
   //boolean expression !, ||, &&
 
