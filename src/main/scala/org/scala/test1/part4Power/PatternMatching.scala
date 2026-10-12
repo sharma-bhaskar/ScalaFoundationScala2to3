@@ -1,4 +1,4 @@
-package org.scala.test1.part4
+package org.scala.test1.part4Power
 
 import scala.util.Random
 

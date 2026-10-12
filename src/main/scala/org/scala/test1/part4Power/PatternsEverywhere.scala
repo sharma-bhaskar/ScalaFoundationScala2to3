@@ -1,4 +1,4 @@
-package org.scala.test1.part4
+package org.scala.test1.part4Power
 
 object PatternsEverywhere {
   // big idea #1: catches are actually MATCHES
