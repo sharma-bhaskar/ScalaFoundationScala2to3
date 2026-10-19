@@ -59,5 +59,43 @@ object ProductionStyleFactorPattern {
     // The factory method could return an already configured instance.
     println(processor.checkout(req))
   }
+  //7. Why and why not Factory Method?
+  //When Factory Method is useful
+  //It fits when different creator types share an overall workflow but need to instantiate different products.
+  //Examples:
+  //- Different exporters create PDF, CSV, or JSON writers.
+  //- Different message processors construct Kafka, RabbitMQ, or other publishers.
+  //- Different document workflows create specialized document handlers.
+  //- Different payment processors instantiate provider-specific gateways.
+
+
+  //  8. Idiomatic Scala approach
+  enum PaymentMethod {
+    case UPI, CARD
+  }
+
+  trait PaymentGW_V4 {
+    def pay(amount: BigDecimal): Unit
+  }
+
+  class UPIGateWay extends PaymentGW_V4 {
+
+    override def pay(amount: BigDecimal): Unit = println(s"UPI payment: $amount")
+
+  }
+
+  class CardGateway extends PaymentGW_V4 {
+
+    override def pay(amount: BigDecimal): Unit = println(s"Card payment: $amount")
+  }
+
+  object PaymentMethod {
+    def apply(method: PaymentMethod): PaymentGW_V4 = {
+      method match {
+        case PaymentMethod.UPI => new UPIGateWay()
+        case PaymentMethod.CARD => new CardGateway()
+      }
+    }
+  }
 
 }
